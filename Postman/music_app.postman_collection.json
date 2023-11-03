@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "d3363042-f7d7-49be-80eb-0324130521ea",
+		"name": "music_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24802926",
+		"_collection_link": "https://restless-escape-550783.postman.co/workspace/java~d1f3b1ed-b21e-4a88-a77c-6f40bc337de0/collection/24802926-d3363042-f7d7-49be-80eb-0324130521ea?action=share&source=collection_link&creator=24802926"
+	},
+	"item": [
+		{
+			"name": "connexion",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": \"haroun\",\n    \"email\": \"test@gmail.com\",\n    \"password\": \"haroun\",\n    \"pseudo\": \"haroun\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user\": \"haroun\",\n  \"password\": \"haroun\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "forum",
+			"item": [
+				{
+					"name": "get_all_posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/posts/get-all-posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"get-all-posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-post/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/posts/get-post/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"get-post",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_post",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY5ODc5MDYxMiwiZXhwIjoxNjk4ODc3MDEyfQ.XKBeWNh6vHunj2bM-_C8vBamRCy1TNs57AAnyvDlFjs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"haroun\",\n    \"subtitle\": \"haroun\",\n    \"content\": \"test\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/posts/create-post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"create-post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
