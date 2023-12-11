@@ -2,42 +2,43 @@ const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../config/database");
 
 
-class Maps extends Model {}
+class Profil extends Model {}
 
-Maps.init(
+Profil.init(
   {
     id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4, 
       allowNull: false,
       primaryKey: true,
     },
-    longitude: {
-      type: DataTypes.FLOAT,
-      allowNull: true,
-    },
-    latitude: {
-        type: DataTypes.FLOAT,
+    music_style: {
+        type: DataTypes.STRING,
         allowNull: true,
+    },
+    groupe_name: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    town: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    country: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    userIdd: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        unique: true,
       },
-    text: {
-        type: DataTypes.STRING,
-        allowNull: true,
-    },
-    address: {
-        type: DataTypes.STRING,
-        allowNull: true,
-    },
-    color: {
-        type: DataTypes.STRING,
-        allowNull: true,
-    },
   },
   {
     sequelize,
-    modelName: "maps",
+    modelName: "profil",
   }
 );
 
 
-module.exports = Maps;
+module.exports = Profil;

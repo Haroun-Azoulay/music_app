@@ -3,8 +3,10 @@
  */
 const sequelize = require("../config/database");
 const { DataTypes, Model } = require("sequelize");
-const Commentary = require("./Commentary");
-const Post = require("./Post");
+const Artist_profile = require("./Artist_profile"); 
+const City = require("./City");
+const Comment = require("./Comment");
+const Organizer_profil = require("./Organizer_profil"); 
 /**
  * Import the Sequelize instance that you have exported
  * in the config/database.js file.
@@ -17,17 +19,20 @@ class User extends Model {}
 User.init(
   {
     id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4, 
       allowNull: false,
       primaryKey: true,
     },
-    user: {
+    lastname: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
     },
-    pseudo: {
+    firstname: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    password: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -36,16 +41,16 @@ User.init(
       allowNull: false,
       unique: true,
     },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     role: {
       type: DataTypes.STRING,
       defaultValue: "user",
       validate: {
         isIn: [["admin", "artist", "moderator", "user"]],
       },
+    },
+    pseudo: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
@@ -79,8 +84,10 @@ User.updateUserRole = async function (userId, newRole) {
   }
 };
 
-User.hasMany(Commentary, { as: 'commentaries' });
-
+User.hasOne(Artist_profile, { foreignKey: 'user_id', as: 'artist_profile' });
+User.hasMany(City, { foreignKey: 'user_id', as: 'city' });
+User.hasMany(Comment, { foreignKey: 'user_id', as: 'comment' });
+User.hasMany(Organizer_profil, { foreignKey: 'user_id', as: 'organizer_profil' });
 
 module.exports = User;
 

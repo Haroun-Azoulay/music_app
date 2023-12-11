@@ -1,4 +1,4 @@
-const Maps = require("../models/Maps");
+const Maps = require("../models/Map");
 const verifyToken = require("../middlewares/verifyToken");
 
 // Ajouter un nouveau point

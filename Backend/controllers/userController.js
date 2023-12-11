@@ -125,7 +125,7 @@ const updateUserRole = async (req, res, next) => {
         console.log(userId)
         console.log(newRole)
 
-        // Assurez-vous que newRole est défini
+
         if (!newRole) {
             return res.status(400).json({ message: "Le nouveau rôle est requis." });
         }

@@ -6,8 +6,8 @@ class Commentary extends Model {}
 Commentary.init(
   {
     id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4, 
       allowNull: false,
       primaryKey: true,
     },
