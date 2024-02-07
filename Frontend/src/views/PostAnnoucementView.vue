@@ -1,7 +1,7 @@
 <template>
   <Navbar />
     <main>
-          <h1 class="text-3xl font-bold underline text-center">Post Annoucement</h1>
+          <h1 class="text-3xl font-bold underline text-center">Poste ton Annonce!</h1>
           <section class="flex justify-center gap-1 mb-8">
   <form  @submit.prevent="postArticles">
     <div class="space-y-12">
@@ -76,7 +76,7 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-interface Article {
+type Article = {
   title: string;
   subtitle: string;
   content: string;

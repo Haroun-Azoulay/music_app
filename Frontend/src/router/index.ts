@@ -7,7 +7,10 @@ import AnnouncementView from '@views/AnnouncementView.vue';
 import PostAnnoucementView from '@views/PostAnnoucementView.vue';
 import SingleAnnoucementView from '@views/SingleAnnoucementView.vue';
 import AllArticlesForumView from '@views/AllArticlesForumView.vue';
+import ProfilView from '@views/ProfilView.vue';
 import AdminView from '@views/AdminView.vue';
+import AdminMapView from '@views/AdminMapView.vue';
+
 const router = createRouter({
   history: createWebHistory('/music_app/'),
   routes: [
@@ -37,10 +40,21 @@ const router = createRouter({
       component: AdminView,
     },
     {
+      path: '/admin/map',
+      name: 'AdminMapView', //mettre un before admin etc important
+      component: AdminMapView,
+    },
+    {
       path: '/post-annoucement',
       name: 'PostAnnoucementView',
       //beforeEnter: requireAuth,
       component: PostAnnoucementView,
+    },
+    {
+      path: '/my-profil',
+      name: 'ProfilView',
+      //beforeEnter: requireAuth,
+      component: ProfilView,
     },
   ]
 })

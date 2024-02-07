@@ -23,3 +23,19 @@ export default defineConfig({
     }
   },
 })
+
+
+
+
+// liste evenment avec table en lien avec maps=event dans levenement 
+// stockage url hebergé sur dropbox par ex 
+// si micro service user pas besoin du jtw user
+
+
+/// renseigner uniquement adresse admin pourrait laisser lagitude lontitude et ou adresse je pense au plein air aussi 
+
+// palette couleur pas de hexago palette couleur visible en front end 
+
+// search pour utilisateur et admin et groupe si café ou concert voir plusieurs groupe click et lutilisateur dans le groupe et ou programme du concert si l epoint envoyé sur la page evemenet le lien de l'id organisateur ses coordonées etc 
+//il fait la promo vient son annonce
+
