@@ -8,6 +8,8 @@ import OrganizerProfil from "./src/models/OrganizerProfil";
 import userRoutes from "./src/routes/userRoutes"; 
 import cityRoutes from "./src/routes/cityRoutes"; 
 
+const cors = require('cors');
+
 dotenv.config();
   
 declare module 'express' { 
@@ -18,6 +20,7 @@ declare module 'express' {
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 const port = process.env.PORT || 3000;
 
 
